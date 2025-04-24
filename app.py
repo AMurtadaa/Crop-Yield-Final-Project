@@ -20,8 +20,8 @@ def predict():
         average_rain_fall_mm_per_year = request.form['average_rain_fall_mm_per_year']
         pesticides_tonnes = request.form['pesticides_tonnes']
         avg_temp = request.form['avg_temp']
-        Item  = request.form['Item'].strip().lower()
-        Area  = request.form['Area'].strip().lower()
+        Item  = request.form['Item'].strip()
+        Area  = request.form['Area'].strip()
 
         features = np.array([[Year,average_rain_fall_mm_per_year,pesticides_tonnes,avg_temp,Area,Item]],dtype=object)
         transformed_features = preprocessor.transform(features)
